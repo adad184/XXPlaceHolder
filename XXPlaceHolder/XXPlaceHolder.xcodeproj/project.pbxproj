@@ -12,8 +12,8 @@
 		ED28B2901BD487C500AED1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED28B28F1BD487C500AED1CF /* Assets.xcassets */; };
 		ED28B2931BD487C500AED1CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED28B2911BD487C500AED1CF /* LaunchScreen.storyboard */; };
 		ED28B29B1BD4891200AED1CF /* XXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED28B29A1BD4891200AED1CF /* XXViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		ED28B29D1BD4893800AED1CF /* XXPlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED28B29C1BD4893800AED1CF /* XXPlaceHolder.swift */; settings = {ASSET_TAGS = (); }; };
 		ED28B2A21BD4E7AE00AED1CF /* 1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = ED28B2A11BD4E7AE00AED1CF /* 1.jpeg */; settings = {ASSET_TAGS = (); }; };
+		ED28B2A61BD4F0C500AED1CF /* XXPlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED28B2A51BD4F0C500AED1CF /* XXPlaceHolder.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +24,8 @@
 		ED28B2921BD487C500AED1CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED28B2941BD487C500AED1CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED28B29A1BD4891200AED1CF /* XXViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XXViewController.swift; sourceTree = "<group>"; };
-		ED28B29C1BD4893800AED1CF /* XXPlaceHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XXPlaceHolder.swift; path = Classes/XXPlaceHolder.swift; sourceTree = SOURCE_ROOT; };
 		ED28B2A11BD4E7AE00AED1CF /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
+		ED28B2A51BD4F0C500AED1CF /* XXPlaceHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XXPlaceHolder.swift; path = ../Classes/XXPlaceHolder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 		ED28B29E1BD4893E00AED1CF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				ED28B29C1BD4893800AED1CF /* XXPlaceHolder.swift */,
+				ED28B2A51BD4F0C500AED1CF /* XXPlaceHolder.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -150,7 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED28B29B1BD4891200AED1CF /* XXViewController.swift in Sources */,
-				ED28B29D1BD4893800AED1CF /* XXPlaceHolder.swift in Sources */,
+				ED28B2A61BD4F0C500AED1CF /* XXPlaceHolder.swift in Sources */,
 				ED28B28B1BD487C500AED1CF /* ViewController.swift in Sources */,
 				ED28B2891BD487C500AED1CF /* AppDelegate.swift in Sources */,
 			);
