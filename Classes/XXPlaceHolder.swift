@@ -60,13 +60,21 @@ class XXPlaceHolder: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.opaque = false;
+        self.setup()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.opaque = false;
+        self.setup()
+    }
+    
+    func setup() {
+        self.opaque = false
+        self.contentMode = .Redraw
+        self.backgroundColor = UIColor.clearColor()
+        self.userInteractionEnabled = false
+        self.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
     }
 
     override func drawRect(rect: CGRect) {
@@ -324,7 +332,6 @@ extension UIView
                 let ph = XXPlaceHolder.init(frame: self.bounds)
                 self.addSubview(ph)
                 ph.tag = XXPlaceHolder.self.hash() + self.hashValue
-                ph.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
                 
                 placeholder = ph
             }
