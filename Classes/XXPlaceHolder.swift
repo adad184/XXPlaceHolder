@@ -272,24 +272,24 @@ extension UIView
         }
     }
     
-    func getPlaceHolder() -> XXPlaceHolder? {
+    public func getPlaceHolder() -> XXPlaceHolder? {
         return self.viewWithTag(XXPlaceHolder.self.hash() + self.hashValue) as? XXPlaceHolder
     }
     
-    func showPlaceHolder() {
+    public func showPlaceHolder() {
         self.showPlaceHolderWith(XXPlaceHolder.config.lineColor)
     }
     
-    func showPlaceHolderWith(lineColor: UIColor) {
+    public func showPlaceHolderWith(lineColor: UIColor) {
         self.showPlaceHolderWith(lineColor, backColor: XXPlaceHolder.config.backColor)
     }
     
-    func showPlaceHolderWith(lineColor: UIColor, backColor: UIColor) {
+    public func showPlaceHolderWith(lineColor: UIColor, backColor: UIColor) {
         let config = XXPlaceHolder.config
         self.showPlaceHolderWith(lineColor, backColor: backColor, arrowSize: config.arrowSize)
     }
     
-    func showPlaceHolderWith(lineColor: UIColor, backColor: UIColor, arrowSize: CGFloat) {
+    public func showPlaceHolderWith(lineColor: UIColor, backColor: UIColor, arrowSize: CGFloat) {
         self.showPlaceHolderWith(
             lineColor,
             backColor: backColor,
@@ -297,7 +297,7 @@ extension UIView
             lineWidth: XXPlaceHolder.config.lineWidth)
     }
     
-    func showPlaceHolderWith(lineColor: UIColor, backColor: UIColor, arrowSize: CGFloat, lineWidth: CGFloat) {
+    public func showPlaceHolderWith(lineColor: UIColor, backColor: UIColor, arrowSize: CGFloat, lineWidth: CGFloat) {
         self.showPlaceHolderWith(
             lineColor,
             backColor: backColor,
@@ -307,7 +307,7 @@ extension UIView
             frameColor: XXPlaceHolder.config.frameColor)
     }
     
-    func showPlaceHolderWith(lineColor: UIColor, backColor: UIColor, arrowSize: CGFloat, lineWidth: CGFloat, frameWidth: CGFloat, frameColor: UIColor) {
+    public func showPlaceHolderWith(lineColor: UIColor, backColor: UIColor, arrowSize: CGFloat, lineWidth: CGFloat, frameWidth: CGFloat, frameColor: UIColor) {
         #if RELEASE
             // do nothing
             #else
@@ -335,12 +335,12 @@ extension UIView
         #endif
     }
     
-    func showPlaceHolderWithAllSubviews() {
+    public func showPlaceHolderWithAllSubviews() {
         print("showPlaceholderWithAllSubviews")
         self.showPlaceHolderWithAllSubviewsWith(UInt.max)
     }
     
-    func showPlaceHolderWithAllSubviewsWith(maxPath: UInt) {
+    public func showPlaceHolderWithAllSubviewsWith(maxPath: UInt) {
         if ( maxPath > 0 ) {
             for v: UIView in self.subviews {
                 v.showPlaceHolderWithAllSubviewsWith(maxPath - 1)
@@ -349,26 +349,26 @@ extension UIView
         self.showPlaceHolder()
     }
     
-    func hidePlaceHolder() {
+    public func hidePlaceHolder() {
         if let placeholder = self.getPlaceHolder() {
             placeholder.hidden = true
         }
     }
     
-    func hidePlaceHolderWithAllSubviews() {
+    public func hidePlaceHolderWithAllSubviews() {
         for v: UIView in self.subviews {
             v.hidePlaceHolderWithAllSubviews()
         }
         self.hidePlaceHolder()
     }
     
-    func removePlaceHolder() {
+    public func removePlaceHolder() {
         if let placeholder = self.getPlaceHolder() {
             placeholder.removeFromSuperview()
         }
     }
     
-    func removePlaceHolderWithAllSubviews() {
+    public func removePlaceHolderWithAllSubviews() {
         for v: UIView in self.subviews {
             v.removePlaceHolderWithAllSubviews()
         }
