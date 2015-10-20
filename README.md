@@ -31,30 +31,30 @@ Usage
 simply, you only need one line code.
 
 ```swift
-yourView.showPlaceholder()
+yourView.showPlaceHolder()
 ```
 
 
 or you can customize youself.
 
 ```swift
-func showPlaceholder()
-func showPlaceholderWith(lineColor: UIColor)
-func showPlaceholderWith(lineColor: UIColor, backColor: UIColor)
-func showPlaceholderWith(lineColor: UIColor, backColor: UIColor, arrowSize: CGFloat)
-func showPlaceholderWith(lineColor: UIColor, backColor: UIColor, arrowSize: CGFloat, lineWidth: CGFloat)
-func showPlaceholderWith(lineColor: UIColor, backColor: UIColor, arrowSize: CGFloat, lineWidth: CGFloat, frameWidth: CGFloat, frameColor: UIColor)
+func showPlaceHolder()
+func showPlaceHolderWith(lineColor: UIColor)
+func showPlaceHolderWith(lineColor: UIColor, backColor: UIColor)
+func showPlaceHolderWith(lineColor: UIColor, backColor: UIColor, arrowSize: CGFloat)
+func showPlaceHolderWith(lineColor: UIColor, backColor: UIColor, arrowSize: CGFloat, lineWidth: CGFloat)
+func showPlaceHolderWith(lineColor: UIColor, backColor: UIColor, arrowSize: CGFloat, lineWidth: CGFloat, frameWidth: CGFloat, frameColor: UIColor)
 
-func showPlaceholderWithAllSubviews()
+func showPlaceHolderWithAllSubviews()
 func showPlaceHolderWithAllSubviewsWith(maxPath: UInt)
 
 
-func hidePlaceholder()
-func hidePlaceholderWithAllSubviews()
-func removePlaceholder()    
-func removePlaceholderWithAllSubviews()
+func hidePlaceHolder()
+func hidePlaceHolderWithAllSubviews()
+func removePlaceHolder()    
+func removePlaceHolderWithAllSubviews()
 
-func getPlaceholder() -> XXPlaceHolder?
+func getPlaceHolder() -> XXPlaceHolder?
 ```
 	
 	
