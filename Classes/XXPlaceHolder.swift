@@ -272,7 +272,7 @@ extension UIView
         }
     }
     
-    private func getPlaceholder() -> XXPlaceHolder? {
+    func getPlaceholder() -> XXPlaceHolder? {
         return self.viewWithTag(XXPlaceHolder.self.hash() + self.hashValue) as? XXPlaceHolder
     }
     
