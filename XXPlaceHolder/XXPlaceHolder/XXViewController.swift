@@ -29,11 +29,11 @@ class XXViewController: UIViewController {
         self.view.addSubview(iv5)
         self.view.addSubview(iv6)
         
-        iv2.showPlaceholder()
-        iv3.showPlaceholderWith(UIColor.greenColor())
-        iv4.showPlaceholderWith(UIColor.yellowColor(), backColor: UIColor.init(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.5))
-        iv5.showPlaceholderWith(UIColor.whiteColor(), backColor: UIColor.init(red: 1.0, green: 0.5, blue: 0, alpha: 0.8), arrowSize: 12)
-        iv6.showPlaceholderWith(UIColor.whiteColor(), backColor: UIColor.blackColor(), arrowSize: 25, lineWidth: 3, frameWidth: 5, frameColor: UIColor.redColor())
+        iv2.showPlaceHolder()
+        iv3.showPlaceHolderWith(UIColor.greenColor())
+        iv4.showPlaceHolderWith(UIColor.yellowColor(), backColor: UIColor.init(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.5))
+        iv5.showPlaceHolderWith(UIColor.whiteColor(), backColor: UIColor.init(red: 1.0, green: 0.5, blue: 0, alpha: 0.8), arrowSize: 12)
+        iv6.showPlaceHolderWith(UIColor.whiteColor(), backColor: UIColor.blackColor(), arrowSize: 25, lineWidth: 3, frameWidth: 5, frameColor: UIColor.redColor())
         
         let imgSize = CGSizeMake(130, 130)
         let windowWidth = UIScreen.mainScreen().bounds.width

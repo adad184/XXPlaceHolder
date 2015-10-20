@@ -31,7 +31,7 @@ Usage
 simply, you only need one line code.
 
 ```swift
-yourView.showPlaceHolder()
+yourView.showPlaceholder()
 ```
 
 
