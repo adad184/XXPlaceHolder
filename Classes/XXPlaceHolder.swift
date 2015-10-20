@@ -10,24 +10,24 @@ import UIKit
 
 // MARK: - XXPlaceHolderConfig
 
-struct XXPlaceHolderConfig {
+public struct XXPlaceHolderConfig {
     
-    var backColor: UIColor  = UIColor.clearColor()
-    var arrowSize: CGFloat  = 3
-    var lineColor: UIColor  = UIColor.whiteColor()
-    var lineWidth: CGFloat  = 1
-    var frameColor: UIColor = UIColor.redColor()
-    var frameWidth: CGFloat = 0
+    public var backColor: UIColor  = UIColor.clearColor()
+    public var arrowSize: CGFloat  = 3
+    public var lineColor: UIColor  = UIColor.whiteColor()
+    public var lineWidth: CGFloat  = 1
+    public var frameColor: UIColor = UIColor.redColor()
+    public var frameWidth: CGFloat = 0
     
-    var showArrow: Bool             = true
-    var showText: Bool              = true
-
-    var visible: Bool               = true
-    var autoDisplay: Bool           = false
-    var autoDisplaySystemView: Bool = false
+    public var showArrow: Bool             = true
+    public var showText: Bool              = true
     
-    var visibleMemberOfClasses: [AnyClass] = [AnyClass]()
-    var visibleKindOfClasses: [AnyClass]   = [AnyClass]()
+    public var visible: Bool               = true
+    public var autoDisplay: Bool           = false
+    public var autoDisplaySystemView: Bool = false
+    
+    public var visibleMemberOfClasses: [AnyClass] = [AnyClass]()
+    public var visibleKindOfClasses: [AnyClass]   = [AnyClass]()
     
     private let defaultMemberOfClasses: [AnyClass] = [
         UIImageView.self,
@@ -43,41 +43,41 @@ struct XXPlaceHolderConfig {
 
 // MARK: - XXPlaceHolder
 
-class XXPlaceHolder: UIView {
-
-    static var config: XXPlaceHolderConfig = XXPlaceHolderConfig()
+public class XXPlaceHolder: UIView {
     
-    var backColor: UIColor  = XXPlaceHolder.config.backColor {didSet{self.setNeedsDisplay()}}
-    var arrowSize: CGFloat  = XXPlaceHolder.config.arrowSize {didSet{self.setNeedsDisplay()}}
-    var lineColor: UIColor  = XXPlaceHolder.config.lineColor {didSet{self.setNeedsDisplay()}}
-    var lineWidth: CGFloat  = XXPlaceHolder.config.lineWidth {didSet{self.setNeedsDisplay()}}
-    var frameColor: UIColor = XXPlaceHolder.config.frameColor {didSet{self.setNeedsDisplay()}}
-    var frameWidth: CGFloat = XXPlaceHolder.config.frameWidth {didSet{self.setNeedsDisplay()}}
+    public static var config: XXPlaceHolderConfig = XXPlaceHolderConfig()
     
-    var showArrow: Bool = XXPlaceHolder.config.showArrow
-    var showText: Bool  = XXPlaceHolder.config.showText
+    public var backColor: UIColor  = XXPlaceHolder.config.backColor {didSet{self.setNeedsDisplay()}}
+    public var arrowSize: CGFloat  = XXPlaceHolder.config.arrowSize {didSet{self.setNeedsDisplay()}}
+    public var lineColor: UIColor  = XXPlaceHolder.config.lineColor {didSet{self.setNeedsDisplay()}}
+    public var lineWidth: CGFloat  = XXPlaceHolder.config.lineWidth {didSet{self.setNeedsDisplay()}}
+    public var frameColor: UIColor = XXPlaceHolder.config.frameColor {didSet{self.setNeedsDisplay()}}
+    public var frameWidth: CGFloat = XXPlaceHolder.config.frameWidth {didSet{self.setNeedsDisplay()}}
+    
+    public var showArrow: Bool = XXPlaceHolder.config.showArrow {didSet{self.setNeedsDisplay()}}
+    public var showText: Bool  = XXPlaceHolder.config.showText {didSet{self.setNeedsDisplay()}}
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.setup()
     }
-
-    required init?(coder aDecoder: NSCoder) {
+    
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         self.setup()
     }
     
-    func setup() {
+    private func setup() {
         self.opaque = false
         self.contentMode = .Redraw
         self.backgroundColor = UIColor.clearColor()
         self.userInteractionEnabled = false
         self.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
     }
-
-    override func drawRect(rect: CGRect) {
+    
+    override public func drawRect(rect: CGRect) {
         
         let width = rect.size.width
         let height = rect.size.height
@@ -179,7 +179,7 @@ class XXPlaceHolder: UIView {
 
 // MARK: - UIView extension
 
-extension UIView
+public extension UIView
 {
     public override class func initialize() {
         struct Static {
@@ -216,7 +216,7 @@ extension UIView
         }
     }
     
-    func xx_didMoveToSuperview() -> UIView {
+    private func xx_didMoveToSuperview() -> UIView {
         self.xx_didMoveToSuperview()
         
         self.checkAutoDisplay()
@@ -313,7 +313,7 @@ extension UIView
             #else
             
             var placeholder:XXPlaceHolder? = self.getPlaceHolder()
-
+            
             if ( placeholder == nil) {
                 let ph = XXPlaceHolder.init(frame: self.bounds)
                 self.addSubview(ph)
