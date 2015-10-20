@@ -1,10 +1,10 @@
-MMPlaceHolder
+XXPlaceHolder
 =============
 [![CocoaPods](https://img.shields.io/cocoapods/v/XXPlaceHolder.svg)]()
 [![CocoaPods](https://img.shields.io/cocoapods/p/XXPlaceHolder.svg)]()
 [![CocoaPods](https://img.shields.io/cocoapods/l/XXPlaceHolder.svg)]()
 
-A drop in solution to set a placeholder or show UIView's size, A Swift version of ![MMPlaceHolder](https://github.com/adad184/MMPlaceHolder)
+A drop in solution to set a placeholder or show UIView's size, A Swift version of [MMPlaceHolder](https://github.com/adad184/MMPlaceHolder)
 
 ![demo](https://raw.githubusercontent.com/adad184/XXPlaceHolder/master/demo.png)
 
