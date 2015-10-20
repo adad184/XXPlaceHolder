@@ -35,12 +35,23 @@ class XXViewController: UIViewController {
         iv5.showPlaceholderWith(UIColor.whiteColor(), backColor: UIColor.init(red: 1.0, green: 0.5, blue: 0, alpha: 0.8), arrowSize: 12)
         iv6.showPlaceholderWith(UIColor.whiteColor(), backColor: UIColor.blackColor(), arrowSize: 25, lineWidth: 3, frameWidth: 5, frameColor: UIColor.redColor())
         
-        iv1.frame = CGRectMake(20, 20+64, 130, 130);
-        iv2.frame = CGRectMake(170, 20+64, 130, 130);
-        iv3.frame = CGRectMake(20, 170+64, 130, 130);
-        iv4.frame = CGRectMake(170, 170+64, 130, 130);
-        iv5.frame = CGRectMake(20, 170+64+150, 130, 130);
-        iv6.frame = CGRectMake(170, 170+64+150, 130, 130);
+        let imgSize = CGSizeMake(130, 130)
+        let windowWidth = UIScreen.mainScreen().bounds.width
+        let padding = imgSize.height+20;
+        
+        iv1.frame = CGRectMake(0,0, imgSize.width, imgSize.height)
+        iv2.frame = CGRectMake(0,0, imgSize.width, imgSize.height)
+        iv3.frame = CGRectMake(0,0, imgSize.width, imgSize.height)
+        iv4.frame = CGRectMake(0,0, imgSize.width, imgSize.height)
+        iv5.frame = CGRectMake(0,0, imgSize.width, imgSize.height)
+        iv6.frame = CGRectMake(0,0, imgSize.width, imgSize.height)
+        
+        iv1.center = CGPointMake(windowWidth*0.25, 64+padding*0.5)
+        iv2.center = CGPointMake(windowWidth*0.75, 64+padding*0.5)
+        iv3.center = CGPointMake(windowWidth*0.25, 64+padding*1.5)
+        iv4.center = CGPointMake(windowWidth*0.75, 64+padding*1.5)
+        iv5.center = CGPointMake(windowWidth*0.25, 64+padding*2.5)
+        iv6.center = CGPointMake(windowWidth*0.75, 64+padding*2.5)
     }
 
     override func didReceiveMemoryWarning() {

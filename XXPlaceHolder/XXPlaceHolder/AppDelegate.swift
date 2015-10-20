@@ -17,6 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        XXPlaceHolder.config.lineColor = UIColor.blackColor();
+        XXPlaceHolder.config.lineWidth = 1;
+        XXPlaceHolder.config.arrowSize = 5;
+        XXPlaceHolder.config.backColor = UIColor.clearColor();
+        XXPlaceHolder.config.frameWidth = 0;
+        XXPlaceHolder.config.visibleKindOfClasses = [UIImageView.self]
+        XXPlaceHolder.config.autoDisplay = true
+        
         let v1 = XXViewController()
         let v2 = UIViewController()
         let v3 = UIViewController()
@@ -28,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         v4.tabBarItem = UITabBarItem.init(tabBarSystemItem: .History,  tag: 0)
         
         v1.navigationItem.leftBarButtonItem  = UIBarButtonItem.init(customView: UIButton.init(type: .InfoDark))
-        v2.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: UIButton.init(type: .ContactAdd))
+        v1.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: UIButton.init(type: .ContactAdd))
         
         v1.title = "XXPlaceHolder";
         

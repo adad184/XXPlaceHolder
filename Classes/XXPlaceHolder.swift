@@ -103,47 +103,47 @@ class XXPlaceHolder: UIView {
             let radius = self.frameWidth/2;
             
             CGContextSetLineWidth(ctx, self.frameWidth);
-            CGContextSetStrokeColorWithColor(ctx, self.frameColor.CGColor);
+            CGContextSetStrokeColorWithColor(ctx, self.frameColor.CGColor)
             
-            CGContextMoveToPoint(ctx, radius, radius);
-            CGContextAddLineToPoint(ctx, radius, height - radius);
-            CGContextAddLineToPoint(ctx, width - radius, height - radius);
-            CGContextAddLineToPoint(ctx, width - radius, radius);
-            CGContextAddLineToPoint(ctx, radius, radius);
+            CGContextMoveToPoint(ctx, radius, radius)
+            CGContextAddLineToPoint(ctx, radius, height - radius)
+            CGContextAddLineToPoint(ctx, width - radius, height - radius)
+            CGContextAddLineToPoint(ctx, width - radius, radius)
+            CGContextAddLineToPoint(ctx, radius, radius)
             CGContextClosePath(ctx)
             
-            CGContextStrokePath(ctx);
+            CGContextStrokePath(ctx)
         }
         
         // strike lines & arrows
         if ( self.showArrow ) {
             
-            let radius = self.frameWidth/2*3;
+            let radius = self.frameWidth/2*3
             
-            CGContextSetLineWidth(ctx, lineWidth);
-            CGContextSetStrokeColorWithColor(ctx, self.lineColor.CGColor);
+            CGContextSetLineWidth(ctx, lineWidth)
+            CGContextSetStrokeColorWithColor(ctx, self.lineColor.CGColor)
             
-            CGContextMoveToPoint(ctx, width/2, radius);
-            CGContextAddLineToPoint(ctx, width/2, height-radius);
-            CGContextMoveToPoint(ctx, width/2, radius);
-            CGContextAddLineToPoint(ctx, width/2 - arrowSize, arrowSize + radius);
-            CGContextMoveToPoint(ctx, width/2, radius);
-            CGContextAddLineToPoint(ctx, width/2 + arrowSize, arrowSize + radius);
-            CGContextMoveToPoint(ctx, width/2, height-radius);
-            CGContextAddLineToPoint(ctx, width/2 - arrowSize, height - arrowSize - radius);
-            CGContextMoveToPoint(ctx, width/2, height-radius);
-            CGContextAddLineToPoint(ctx, width/2 + arrowSize, height - arrowSize - radius);
+            CGContextMoveToPoint(ctx, width/2, radius)
+            CGContextAddLineToPoint(ctx, width/2, height-radius)
+            CGContextMoveToPoint(ctx, width/2, radius)
+            CGContextAddLineToPoint(ctx, width/2 - arrowSize, arrowSize + radius)
+            CGContextMoveToPoint(ctx, width/2, radius)
+            CGContextAddLineToPoint(ctx, width/2 + arrowSize, arrowSize + radius)
+            CGContextMoveToPoint(ctx, width/2, height-radius)
+            CGContextAddLineToPoint(ctx, width/2 - arrowSize, height - arrowSize - radius)
+            CGContextMoveToPoint(ctx, width/2, height-radius)
+            CGContextAddLineToPoint(ctx, width/2 + arrowSize, height - arrowSize - radius)
             
-            CGContextMoveToPoint(ctx, radius, height/2);
-            CGContextAddLineToPoint(ctx, width - radius, height/2);
-            CGContextMoveToPoint(ctx, radius, height/2);
-            CGContextAddLineToPoint(ctx, arrowSize + radius, height/2 - arrowSize);
-            CGContextMoveToPoint(ctx, radius, height/2);
-            CGContextAddLineToPoint(ctx, arrowSize + radius, height/2 + arrowSize);
-            CGContextMoveToPoint(ctx, width - radius, height/2);
-            CGContextAddLineToPoint(ctx, width - arrowSize - radius, height/2 - arrowSize);
-            CGContextMoveToPoint(ctx, width - radius, height/2);
-            CGContextAddLineToPoint(ctx, width - arrowSize - radius, height/2 + arrowSize);
+            CGContextMoveToPoint(ctx, radius, height/2)
+            CGContextAddLineToPoint(ctx, width - radius, height/2)
+            CGContextMoveToPoint(ctx, radius, height/2)
+            CGContextAddLineToPoint(ctx, arrowSize + radius, height/2 - arrowSize)
+            CGContextMoveToPoint(ctx, radius, height/2)
+            CGContextAddLineToPoint(ctx, arrowSize + radius, height/2 + arrowSize)
+            CGContextMoveToPoint(ctx, width - radius, height/2)
+            CGContextAddLineToPoint(ctx, width - arrowSize - radius, height/2 - arrowSize)
+            CGContextMoveToPoint(ctx, width - radius, height/2)
+            CGContextAddLineToPoint(ctx, width - arrowSize - radius, height/2 + arrowSize)
             
             CGContextStrokePath(ctx);
         }
@@ -189,9 +189,6 @@ extension UIView
         if ( self == XXPlaceHolder.self ) {
             return;
         }
-        else {
-            print("initialize: \(self.dynamicType)")
-        }
         
         func swizzleSelector(originalSelector:Selector, swizzledSelector:Selector) {
             let originalMethod = class_getInstanceMethod(self, originalSelector)
@@ -219,8 +216,6 @@ extension UIView
         }
     }
     
-    // MARK: - Method Swizzling
-    
     func xx_didMoveToSuperview() -> UIView {
         self.xx_didMoveToSuperview()
         
@@ -228,8 +223,6 @@ extension UIView
         
         return self
     }
-    
-    // MARK: - Private
     
     private func checkAutoDisplay() {
         let config = XXPlaceHolder.config
@@ -239,24 +232,21 @@ extension UIView
         }
         
         if config.autoDisplay {
+            
             if ( NSBundle(forClass: UIView.self).bundlePath == NSBundle(forClass: self.dynamicType).bundlePath ) {
                 
-                print("system: \(self.dynamicType)")
-                
                 if ( !config.autoDisplaySystemView ) {
-                    return;
-                }
-                
-                var inWhiteList = false
-                for cls: AnyClass in config.defaultMemberOfClasses {
-                    if self.isMemberOfClass(cls) {
-                        inWhiteList = true
-                        break;
+                    var inWhiteList = false
+                    for cls: AnyClass in config.defaultMemberOfClasses {
+                        if self.isMemberOfClass(cls) {
+                            inWhiteList = true
+                            break;
+                        }
                     }
-                }
-                
-                if ( !inWhiteList ) {
-                    return
+                    
+                    if ( !inWhiteList ) {
+                        return
+                    }
                 }
             }
             
@@ -285,8 +275,6 @@ extension UIView
     private func getPlaceholder() -> XXPlaceHolder? {
         return self.viewWithTag(XXPlaceHolder.self.hash() + self.hashValue) as? XXPlaceHolder
     }
-    
-    // MARK: - show
     
     func showPlaceholder() {
         self.showPlaceholderWith(XXPlaceHolder.config.lineColor)
@@ -324,8 +312,6 @@ extension UIView
             // do nothing
             #else
             
-            print("autoDisplay \(self.dynamicType)")
-            
             var placeholder:XXPlaceHolder? = self.getPlaceholder()
 
             if ( placeholder == nil) {
@@ -355,7 +341,7 @@ extension UIView
     }
     
     func showPlaceHolderWithAllSubviewsWith(maxPath: UInt) {
-        if maxPath > 0 {
+        if ( maxPath > 0 ) {
             for v: UIView in self.subviews {
                 v.showPlaceHolderWithAllSubviewsWith(maxPath - 1)
             }
@@ -370,12 +356,9 @@ extension UIView
     }
     
     func hidePlaceholderWithAllSubviews() {
-        print("hidePlaceholderWithAllSubviews")
-        
         for v: UIView in self.subviews {
             v.hidePlaceholderWithAllSubviews()
         }
-        
         self.hidePlaceholder()
     }
     
@@ -389,7 +372,6 @@ extension UIView
         for v: UIView in self.subviews {
             v.removePlaceholderWithAllSubviews()
         }
-        
         self.removePlaceholder()
     }
 }
