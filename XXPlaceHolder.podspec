@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
  
   # 2
-  s.version = "1.0"
+  s.version = "1.1"
  
   # 3
   s.license = { :type => "MIT", :file => "LICENSE" }
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.homepage = "https://github.com/adad184/XXPlaceHolder"
  
   # 6 - Replace this URL with your own Git URL from "Quick Setup"
-  s.source = { :git => "https://github.com/adad184/XXPlaceHolder.git", :tag => "1.0"}
+  s.source = { :git => "https://github.com/adad184/XXPlaceHolder.git", :tag => "1.1"}
  
   # 7
   s.framework = "UIKit"
