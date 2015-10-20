@@ -86,6 +86,8 @@ struct XXPlaceHolderConfig {
 Changelog
 ===============
 
+1.1 Fix Access Control under using framework
+
 1.0 Migrate code from Objective-C into Swift, fully compatible with MMPlaceHolder
 
 
