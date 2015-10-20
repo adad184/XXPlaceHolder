@@ -37,7 +37,7 @@ yourView.showPlaceHolder()
 
 or you can customize youself.
 
-```objc
+```swift
 func showPlaceholder()
 func showPlaceholderWith(lineColor: UIColor)
 func showPlaceholderWith(lineColor: UIColor, backColor: UIColor)
